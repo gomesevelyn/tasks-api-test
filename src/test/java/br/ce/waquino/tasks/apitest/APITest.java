@@ -13,7 +13,7 @@ public class APITest {
 	//é executaado antes mesmo que a classe seja instanciada
 	@BeforeClass
 	public static void setup() {
-		RestAssured.baseURI = "http://localhost:8001/task-backend";
+		RestAssured.baseURI = "http://localhost:8001/tasks-backend";
 	}
 	
 	@Test
@@ -29,7 +29,7 @@ public class APITest {
 	@Test
 	public void deveAdicionarTarefaComSucesso() {
 		RestAssured.given()
-			.body("{\"task\": \"Teste Insercao via API\",\"dueDate\": \"2020-12-20\"}")
+			.body("{\"task\": \"Teste Insercao via API\", \"dueDate\": \"2021-12-20\"}")
 			.contentType(ContentType.JSON)
 		.when()
 			.post("/todo")
